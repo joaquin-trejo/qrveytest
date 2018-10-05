@@ -1,0 +1,15 @@
+{
+  "name": "showapp",
+  "version": "1.0.0",
+  "description": "showapp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/joaquin_trejo/showapp.git"
+  },
+  "author": "jtrejo",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/joaquin_trejo/showapp#readme"
+}
