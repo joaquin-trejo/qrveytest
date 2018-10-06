@@ -1,0 +1,11 @@
+<section class="moviesSeries">
+        <div ng-repeat="movie in $ctrl.moviesResult track by $index">
+            <div class="card-panel" ng-if="$even">
+                <details-card 
+                    genre-list="$ctrl.genreList"
+                    movie-first-column="$ctrl.moviesResult[$index]"
+                    movie-second-column="$ctrl.moviesResult[$index+1]">
+                </details-card>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,37 @@
+.header {
+	overflow: hidden;
+	height: 64px;
+}
+
+.header a {
+	float: left;
+	color: #9FB0B7;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 16px; 
+	line-height: 25px;
+	border-radius: 0px;
+}
+
+.header a.logo {
+  	padding: 18px 0px 19px 42px;
+}
+
+.header a.active {
+	color: #0ABFFE;
+	border-bottom-style: solid;
+	border-bottom-color: #0ABFFE;
+}
+
+.header a:hover {
+	text-decoration: none;
+	color: #0ABFFE;
+	border-bottom-style: solid;
+	border-bottom-color: #0ABFFE;
+}
+
+.header-right {
+	float: right;
+	padding-right: 20px;
+}

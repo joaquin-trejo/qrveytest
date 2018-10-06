@@ -1,0 +1,11 @@
+<div class="searchBar">
+    <form ng-submit="$ctrl.search()">
+        <div class="inputSearch">
+            <i class="fa fa-search searchIcon"></i>
+            <input type="text" 
+                ng-change="$ctrl.changedSearch()"
+                ng-model="$ctrl.searchParameter" 
+                placeholder="Search for a movie, series and videos">
+        </div>
+    </form>
+</div>

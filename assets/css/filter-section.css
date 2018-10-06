@@ -1,0 +1,48 @@
+.filter-section {
+	margin-left: 40px;
+	width: 410px;
+	height: 40px;
+}
+
+.year {
+	float: left;
+	width: 100px;
+}
+
+.genre {
+	float: right;
+	margin-bottom: 15px;
+	width: 240px;
+}
+
+p .yearText {
+	margin-bottom: 15px;
+	color: #687B82;
+}
+
+p .genreText {
+	margin-bottom: 15px;
+	color: #687B82;
+}
+
+select.genreSlect {
+	border-radius: 5px;
+	background-image: url("../img/expand.png");
+	width: 240px;
+	color: #687B82;
+	-webkit-border-radius: 5px;
+   	-moz-border-radius: 5px;
+}
+
+select.yearSelect {
+	border-radius: 5px;
+	background-image: url("../img/expand.png");
+	width: 100px;
+	color: #687B82;
+	-webkit-border-radius: 5px;
+   	-moz-border-radius: 5px;
+}
+
+.textYear {
+	margin-bottom: 20px;
+}
