@@ -7,59 +7,41 @@
 	<link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.css"></link>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/appStyle.css">
+	<link rel="stylesheet" href="assets/css/app-style.css">
 	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/card-section.css">
 	<link rel="stylesheet" href="assets/css/filter-section.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="assets/css/search-section.css">
 </head>
 <body ng-app="app">
 	<header-app></header-app>
-	<search-app></search-app>
-	<div class="modal-section">
-		<p>Descubre nuevas peliculas y programas de television</p>
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" 
-							class="close"
-							ng-click="$crl.closeIframe()"
-							data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<iframe title="YouTube video player" 
-							id="iframe_callback"
-							class="youtube-player" 
-							type="text/html" 
-							width="570" 
-							height="390" 
-							ng-src="{{$ctrl.videoSrc}}"
-							frameborder="0" allowFullScreen></iframe>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<filter-app></filter-app>
-	<section ng-if="$ctrl.showMessage" class="noFound">
-		<span>“Sorry no movies were found related to these criterias”...</span>
-	</section>
 	<ui-view></ui-view>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
-	<script src="app/app.js"></script>
-	<script src="app/app.controller.js"></script>
-	<script src="app/favorites/favorites.controller.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
 	<script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+	<!-- PRINCIPAL -->
+	<script src="app/app.js"></script>
+	<script src="app/app.controller.js"></script>
 	<script src="app/app.service.js"></script>
+	<!-- COMPONENTS -->
 	<script src="app/components/common/header-app/header-app.component.js"></script>
 	<script src="app/components/common/header-app/header-app.controller.js"></script>
 	<script src="app/components/common/details-card/details-card.component.js"></script>
 	<script src="app/components/common/details-card/details-card.controller.js"></script>
+	<script src="app/components/common/search-app/search-app.component.js"></script>
+	<script src="app/components/common/search-app/search-app.controller.js"></script>
+	<script src="app/components/common/filter-app/filter-app.component.js"></script>
+	<script src="app/components/common/filter-app/filter-app.controller.js"></script>
+	<!-- MOVIES SECTION -->
+	<script src="app/movies/movies.controller.js"></script>
+	<Script src="app/movies/movies.service.js"></Script>
+	<!-- SERIES SECTION -->
+	<script src="app/series/series.controller.js"></script>
+	<script src="app/series/series.service.js"></script>
+	<!-- FAVORITES SECTION -->
+	<script src="app/favorites/favorites.controller.js"></script>
+	<script src="app/favorites/favorites.service.js"></script>
 
 	<!-- Latest compiled and minified CSS -->
 </body>

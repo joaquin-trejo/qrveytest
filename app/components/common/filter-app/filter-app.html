@@ -1,19 +1,20 @@
 <section class="filter-section">
     <div class="year">
-        <p class="yearText">Año</p>
+        <p class="yearText">Year</p>
         <select class="yearSelect"
-            ng-change="$ctrl.selectedYear($ctrl.year)" 
+            ng-change="$ctrl.onSelectedYear()" 
             ng-model="$ctrl.year">
-            <option ng-repeat="option in $ctrl.years" value="{{option}}">{{option}}</option>
+            <option value="" selected>{{ $ctrl.currentYear }}</option>
+            <option ng-repeat="option in $ctrl.yearsArray track by $index" value="{{ option }}">{{ option }}</option>
         </select>
     </div>
     <div class="genre">
-        <p class="genreText">Genero</p>
+        <p class="genreText">Genre</p>
         <select class="genreSlect" 
             ng-change="$ctrl.selectedGenre($ctrl.genre)" 
             ng-model="$ctrl.genre">
             <option value="" disabled selected>Filtrar por..</option>
-            <option ng-repeat="option in $ctrl.genreList" value="{{option.id}}">{{option.name}}</option>
+            <option ng-repeat="genre in $ctrl._genres" value="{{ genre.id }}">{{ genre.name }}</option>
         </select>
     </div>
 </section>

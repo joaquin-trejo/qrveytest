@@ -1,11 +1,13 @@
-<div class="searchBar">
-    <form ng-submit="$ctrl.search()">
-        <div class="inputSearch">
-            <i class="fa fa-search searchIcon"></i>
-            <input type="text" 
-                ng-change="$ctrl.changedSearch()"
-                ng-model="$ctrl.searchParameter" 
-                placeholder="Search for a movie, series and videos">
+<div class="search-bar">
+    <form ng-submit="$ctrl.searchByQuery()">
+        <div class="content-search">
+            <div class="input-search">
+                <i class="fa fa-search"></i>
+                <input type="text"
+                    class="search-by-query"
+                    ng-model="$ctrl.searchParameter" 
+                    placeholder="Search for a movie, series and videos">
+            </div>
         </div>
     </form>
 </div>

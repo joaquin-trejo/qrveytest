@@ -1,11 +1,8 @@
-<section class="moviesSeries">
-        <div ng-repeat="movie in $ctrl.moviesResult track by $index">
-            <div class="card-panel" ng-if="$even">
-                <details-card 
-                    genre-list="$ctrl.genreList"
-                    movie-first-column="$ctrl.moviesResult[$index]"
-                    movie-second-column="$ctrl.moviesResult[$index+1]">
-                </details-card>
-            </div>
-        </div>
-    </section>
+<div class="movieGroup" ng-if="$ctrl.favorites">
+    <div ng-repeat="favorite in $ctrl.favorites track by $index" class='movieThumbnail'>
+        <details-card details="favorite" favorites-html="true"></details-card>
+    </div>
+    <div ng-if="$ctrl.favorites.length == 0" style="margin-left: 42px;">
+        Choose your favorite movies or series in 'Movies, Series' tabs.
+    </div>
+</div>

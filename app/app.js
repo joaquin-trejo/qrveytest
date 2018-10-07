@@ -8,8 +8,11 @@
 			templateUrl: 'app/movies/movies.html',
 			controller: 'MoviesController as $ctrl',
 			resolve: {
-				genreList: function (appService) {
-					return appService.getGenreList();
+				movieList: function(MoviesService) {
+					return MoviesService.getMovies();
+				},
+				genreList: function(MoviesService) {
+					return MoviesService.getGenres();
 				}
 			}
 		};
@@ -20,37 +23,41 @@
 			templateUrl: 'app/series/series.html',
 			controller: 'SeriesController as $ctrl',
 			resolve: {
-				genreList: function (appService) {
-					return appService.getGenreList();
+				serieList: function(SeriesService) {
+					return SeriesService.getSeries();
+				},
+				genreList: function(SeriesService) {
+					return SeriesService.getGenres();
 				}
 			}
 		};
 	
-		var favoritos = {
+		var favorites = {
 			name: 'favorites',
 			url: '/favorites',
-			templateUrl: 'app/favorites.html',
+			templateUrl: 'app/favorites/favorites.html',
 			controller: 'FavoritesController as $ctrl',
 			resolve: {
-				favoritoList: function (appService) {
-					return appService.getFavoritos();
-				},
-				genreList: function (appService) {
-					return appService.getGenreList();
+				favoritoList: function (FavoritesService) {
+					return FavoritesService.getFavorites();
 				}
 			}
 		};
 	
 	   	$stateProvider.state(movies);
 	   	$stateProvider.state(series);
-	   	$stateProvider.state(favoritos);
+	   	$stateProvider.state(favorites);
 		$urlRouterProvider.otherwise('movies');
 	}
 
 	angular.module("app", [
 		'ui.router'
 	])
-	.config(routeConfig);
+	.config(routeConfig)
+	.constant("APIMovieDb", {
+        "APIIndex": "https://api.themoviedb.org/3",
+        "Key": "5bf861f759ec76ae39d8751638762dbc"
+    });
 })();
 
 

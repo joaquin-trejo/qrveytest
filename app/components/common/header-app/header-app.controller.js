@@ -18,8 +18,8 @@
                 path: '/series'
             },
             {
-                label: 'Favoritos',
-                path: '/favoritos'
+                label: 'Favorites',
+                path: '/favorites'
             }
         ];
 

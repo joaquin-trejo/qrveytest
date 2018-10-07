@@ -2,9 +2,8 @@
     'use strict';
     var detailsCard = {
         bindings: {
-            genreList: '<',
-            movieFirstColumn: '<',
-            movieSecondColumn: '<'
+            details: '<',
+            favoritesHtml: '<'
         },
         controller: 'DetailsCardController',
         templateUrl: 'app/components/common/details-card/details-card.html'

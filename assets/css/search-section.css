@@ -1,0 +1,29 @@
+.search-bar {
+	background-color: #F3F6F7;
+}
+
+.content-search {
+	display: inline-block;
+	vertical-align : -8px;
+	width: 100%;
+	padding: 0px 42px 0px 42px;
+}
+
+.input-search {
+	display: inline-block;
+	width: 90%;
+}
+
+.search-by-query {
+	width: 95%;
+	padding: 4px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 0px solid #ccc;
+	border-radius: 0px;
+	box-sizing: border-box;
+	background-color: #F3F6F7;
+	font-style: italic;
+	font-size: 14px;
+	outline: none;
+}

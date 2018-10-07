@@ -4,44 +4,40 @@
         .controller('DetailsCardController', DetailsCardController);
 
     /** @ngInject */
-    function DetailsCardController($scope, $state, appService) {
-        var vm = this;
+    function DetailsCardController(FavoritesService) {
+        var ctrl = this;
 
-        /**** VARIABLES ****/
-        vm.favoritosArray = [];
-        vm.currentState = $state.$current.name;
+        /**
+         * VARIABLES
+         */
 
-        /**** DECLARED FUNCTIONS ****/
-        vm.$onInit = onInit;
-        vm.getTrailer = getTrailer;
-        vm.addFavorites = addFavorites;
-        vm.getGenres = getGenres;
+        ctrl._details;
+        ctrl.styleFav;
 
-        /**** FUNCTIONS ****/
+        /**
+         * DECLARED FUNCTIONS
+         */
+
+        ctrl.$onInit = onInit;
+        ctrl.addToFavorites = addToFavorites;
+
+        /**
+         * FUNCTIONS
+         */
+
         function onInit() {
-            vm.dataFirstColumn = vm.movieFirstColumn;
-            vm.dataSecondColumn = vm.movieSecondColumn;
-            vm.genres = vm.genreList;
+            ctrl._details = ctrl.details;
+            if (ctrl.favoritesHtml) ctrl.styleFav = { color: 'red' };
         }
 
-        function getTrailer(data) {
-            $scope.$emit('onGetMovieTrailer', data);
+        function addToFavorites(object) {
+            var response = FavoritesService.addToFavorites(object)
+            if (response.success) {
+                ctrl.styleFav = { color: 'red' };
+                alert(response.msg);
+            }
+            
         }
 
-        function addFavorites(favorito) {
-            favorito.state = vm.currentState;
-			appService.addFavoritos(favorito);
-        }
-        
-        function getGenres(genreIds) {
-			var setGenre = [];
-			genreIds.forEach(function (id) {
-				vm.genres.find(function (genre) {
-					if (id == genre.id) setGenre.push(genre.name + " ");
-				});
-			});
-
-			return setGenre;
-		}
     }
 })();

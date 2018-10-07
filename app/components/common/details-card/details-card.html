@@ -1,75 +1,21 @@
-<div class="column">
-    <div class="column-img">
-        <img class="card-imagen" 
-            ng-src="{{$ctrl.dataFirstColumn.backdrop_path?'http://image.tmdb.org/t/p/w185/'+$ctrl.dataFirstColumn.backdrop_path : '../../../assets/img/notAvaliable_opt.png'}}">
+<div class="imgThumb pairThumb">
+    <img class="imgSize" 
+        ng-src="{{ $ctrl._details.poster_path?'http://image.tmdb.org/t/p/w185/'+$ctrl._details.poster_path : '../../../assets/img/notAvaliable_opt.png' }}" alt="">
+</div>
+<div class="contentThumb pairThumb">
+    <div class="titleVote">
+        <div class="movieTitle">{{ $ctrl._details.title || $ctrl._details.name}}</div>
+        <div class="movieVote">{{ $ctrl._details.vote_average }}</div>
     </div>
-    <div class="column-info">
-        <p class="card-title">
-            <span>{{$ctrl.dataFirstColumn.title ? $ctrl.dataFirstColumn.title : 'No title Avilable' || $ctrl.dataFirstColumn.original_name ? $ctrl.dataFirstColumn.original_name : 'No title Avilable'  }}</span>
-            <span style="float: right;">
-                {{$ctrl.dataFirstColumn.vote_average}}
-            </span>
-        </p>
-        <p class="card-info">
-            <span>{{ $ctrl.dataFirstColumn.release_date ? $ctrl.dataFirstColumn.release_date : 'Not Avialable Date' | date:'d MMM y'}}</span>
-            <span>|</span>
-            <span ng-repeat="genre in $ctrl.getGenres($ctrl.dataFirstColumn.genre_ids)">
-                {{genre}}
-            </span>
-        </p>
-        <p class="card-overview">{{ $ctrl.dataFirstColumn.overview }}</p>
-        <p class="card-trailer">
-            <button type="button" 
-                class="button" 
-                data-toggle="modal" 
-                ng-click="$ctrl.getTrailer($ctrl.dataFirstColumn)"
-                data-target="#myModal">
-                Ver Trailer
-            </button>
-            <button type="button"
-                class="btn-favoritos"
-                ng-class="{addedFavoritos: $ctrl.addFavoritesFirst}"
-                ng-click="$ctrl.addFavorites($ctrl.dataFirstColumn); $ctrl.addFavoritesFirst = true;">
-                Agregar a Favoritos <i class="fa fa-heart-o"></i>
-            </button>
-        </p>
-    </div>
- </div>
-
- <div class="column" ng-if="$ctrl.dataSecondColumn">
-    <div class="column-img">
-        <img class="card-imagen" 
-            ng-src="{{$ctrl.dataSecondColumn.backdrop_path?'http://image.tmdb.org/t/p/w185/'+$ctrl.dataSecondColumn.backdrop_path : '../../../assets/img/notAvaliable_opt.png'}}">
-    </div>
-    <div class="column-info">
-        <p class="card-title">
-            <span>{{$ctrl.dataSecondColumn.title ? $ctrl.dataSecondColumn.title : 'No title Avilable' || $ctrl.dataSecondColumn.original_name ? $ctrl.dataSecondColumn.original_name : 'No title Avilable'  }}</span>
-            <span style="float: right;">
-                {{$ctrl.dataSecondColumn.vote_average}}
-            </span>
-        </p>
-        <p class="card-info">
-            <span>{{ $ctrl.dataSecondColumn.release_date ? $ctrl.dataSecondColumn.release_date : 'Not Avialable Date' | date:'d MMM y'}}</span>
-            <span>|</span>
-            <span ng-repeat="genre in $ctrl.getGenres($ctrl.dataSecondColumn.genre_ids)">
-                {{genre}}
-            </span>
-        </p>
-        <p class="card-overview">{{ $ctrl.dataSecondColumn.overview}}</p>
-        <p class="card-trailer">
-            <button type="button" 
-                class="button" 
-                data-toggle="modal" 
-                ng-click="$ctrl.getTrailer($ctrl.dataSecondColumn)"
-                data-target="#myModal">
-                Ver Trailer
-            </button>
-            <button type="button"
-                class="btn-favoritos"
-                ng-class="{addedFavoritos: $ctrl.addFavoritesSecond}"
-                ng-click="$ctrl.addFavorites($ctrl.dataSecondColumn); $ctrl.addFavoritesSecond = true;">
-                Agregar a Favoritos <i class="fa fa-heart-o"></i>
-            </button>
-        </p>
+    <div class="detailsMovie"> {{ $ctrl._details.runtime }} | {{ $ctrl._details.release_date || $ctrl_details.first_air_date }} | {{ $ctrl._details.genre }}</div>
+    <div  class="movieOverview">{{ $ctrl._details.extra }}-{{ $ctrl._details.overview.substring(0,100) }}...</div>
+    <div class="trailFav">
+        <div class="trailerDiv">
+            <button class="button" ng-click="$ctrl.watchTrailer()">Watch Trailer</button>
+        </div>
+        <div class="favoriteDiv" ng-click="$ctrl.addToFavorites($ctrl._details)">
+            Add to Favorites
+            <i class="fa fa-heart" ng-style="$ctrl.styleFav" style="font-size: 16px"></i>
+        </div>
     </div>
 </div>

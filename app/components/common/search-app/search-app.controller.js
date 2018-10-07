@@ -5,6 +5,23 @@
 
     /** @ngInject */
     function SearchAppController() {
-        var vm = this;
+        var ctrl = this;
+
+        /**
+         * VARIABLES
+         */
+        ctrl.searchParameter = "";
+
+        /**
+         * DECLARED FUNCTIONS
+         */
+        ctrl.searchByQuery = searchByQuery;
+
+        /**
+         * FUNCTIONS
+         */
+        function searchByQuery() {
+            ctrl.onSearch({searchParameter: ctrl.searchParameter});
+        }
     }
 })();

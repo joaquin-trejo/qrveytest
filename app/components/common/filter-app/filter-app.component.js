@@ -1,7 +1,11 @@
 (function() {
     'use strict';
     var filterApp = {
-        bindings: {},
+        bindings: {
+            genres: '<',
+            onSearchByYear: '&',
+            onSearchByGenre: '&'
+        },
         controller: 'FilterAppController',
         templateUrl: 'app/components/common/filter-app/filter-app.html'
     };
