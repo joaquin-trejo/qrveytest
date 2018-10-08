@@ -26,9 +26,9 @@
          * FUNCTIONS
          */
 
-        function getSeries(page) {
-            var currentPage = page ? page : '1';
-            return $http.get(APIMovieDb.APIIndex + '/discover/tv?api_key=' + APIMovieDb.Key + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=' + currentPage);
+        function getSeries(currentPage) {
+            var page = currentPage ? currentPage : '1';
+            return $http.get(APIMovieDb.APIIndex + '/discover/tv?api_key=' + APIMovieDb.Key + '&language=en-US&sort_by=popularity.desc&include_null_first_air_dates=false&page=' + page);
         }
 
         function getGenres() {

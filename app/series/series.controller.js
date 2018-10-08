@@ -58,10 +58,10 @@
             });
 		}
 		function searchByPage(event) {
-            ctrl.movies = [];
+            ctrl.series = [];
             SeriesService.getSeries(event).then(function (response) {
-                ctrl.movies = response.data.results;
-                ctrl.showMessage = (ctrl.movies.length > 0 ) ? false : true;
+                ctrl.series = response.data.results;
+                ctrl.showMessage = (ctrl.series.length > 0 ) ? false : true;
             }).catch(function (error) {
                 alert('Error: ', error);
             });
