@@ -51,13 +51,14 @@
 	}
 
 	angular.module("app", [
-		'ui.router'
+		'ui.router',
+		'ngYoutubeEmbed'
 	])
 	.config(routeConfig)
 	.constant("APIMovieDb", {
         "APIIndex": "https://api.themoviedb.org/3",
         "Key": "5bf861f759ec76ae39d8751638762dbc"
-    });
+	});
 })();
 
 

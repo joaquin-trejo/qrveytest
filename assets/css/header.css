@@ -35,3 +35,103 @@
 	float: right;
 	padding-right: 20px;
 }
+
+@media screen and (max-width: 400px) {
+	.header {
+		display: table-cell;
+		width: 100%;
+	}
+
+	.logo {
+		padding: 0;
+	}
+
+	.header-right {
+		padding: 0;
+		float: none;
+		padding-left: 30px;
+	}
+
+	.search-by-query {
+		width: 60% !important;
+	}
+
+	.movieTitle {
+		max-width: 100%;
+	}
+
+	.movieThumbnail {
+		width: 350px;
+	}
+
+	.movieOverview {
+		display: none !important;
+	}
+
+	.titleVote {
+		width: 150px;
+	}
+
+	.trailFav {
+		display: inline-grid;
+		text-align: center;
+	}
+
+	.favoriteDiv {
+		text-align: center;
+	}
+
+	.filter-section {
+		margin-top: 30px;
+	}
+
+	.genreSlect,
+	.yearSelect {
+		width: 140px !important;
+	}
+}
+
+/* @media screen and (max-width: 800px) {
+	.header-right {
+		float: none;
+		padding-left: 50px;
+		position: absolute;
+		right: 0;
+		top: 5px;
+	}
+
+	#filter {
+		display: flex;
+		justify-content: center;
+	}
+
+	._txt {
+		text-align: center;
+	}
+
+	._txt h2 {
+		font-size: 20px;
+	}
+
+	.filter-section {
+		margin-top: 30px;
+	}
+
+	.movieThumbnail {
+		width: 720px;
+	}
+
+	.genreSlect,
+	.yearSelect {
+		width: 160px !important;
+	}
+
+	.filter-section {
+		margin-left: 120px !important;
+	}
+
+	.contentThumb {
+		width: 550px !important;
+	}
+
+} */

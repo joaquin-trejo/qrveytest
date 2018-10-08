@@ -11,7 +11,7 @@
     <div class="genre">
         <p class="genreText">Genre</p>
         <select class="genreSlect" 
-            ng-change="$ctrl.selectedGenre($ctrl.genre)" 
+            ng-change="$ctrl.onSelectedGenre()" 
             ng-model="$ctrl.genre">
             <option value="" disabled selected>Filtrar por..</option>
             <option ng-repeat="genre in $ctrl._genres" value="{{ genre.id }}">{{ genre.name }}</option>

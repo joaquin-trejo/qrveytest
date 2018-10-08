@@ -13,13 +13,16 @@
 		ctrl.series = serieList.data.results;
 		ctrl.genres = genreList.data.genres;
 		ctrl.showMessage = false;
+		ctrl.currentPage = 1;
 
 		/**
 		 * DECLARED FUNCTIONS
 		 */
 
 		ctrl.searchByQuery = searchByQuery;
-
+		ctrl.searchByYear = searchByYear;
+		ctrl.searchByGenre = searchByGenre;
+		ctrl.searchByPage = searchByPage;
 
 		/**
 		 * FUNCTIONS
@@ -29,12 +32,40 @@
             ctrl.series = [];
             SeriesService.searchByQuery(event).then(function(response) {
                 ctrl.series = response.data.results;
-                ctrl.showMessage = (ctrl.showMessage.lenth > 0 ) ? false : true;
+                ctrl.showMessage = (ctrl.series.length > 0 ) ? false : true;
+            }).catch(function(error) {
+                alert('Error: ', error);
+            });
+		}
+		
+		function searchByYear(event) {
+            ctrl.series = [];
+            SeriesService.searchByYear(event).then(function(response) {
+                ctrl.series = response.data.results;
+                ctrl.showMessage = (ctrl.series.length > 0 ) ? false : true;
             }).catch(function(error) {
                 alert('Error: ', error);
             });
         }
-		
+
+        function searchByGenre(event) {
+            ctrl.series = [];
+            SeriesService.searchByGenre(event).then(function(response) {
+                ctrl.series = response.data.results;
+                ctrl.showMessage = (ctrl.series.length > 0 ) ? false : true;
+            }).catch(function(error) {
+                alert('Error: ', error);
+            });
+		}
+		function searchByPage(event) {
+            ctrl.movies = [];
+            SeriesService.getSeries(event).then(function (response) {
+                ctrl.movies = response.data.results;
+                ctrl.showMessage = (ctrl.movies.length > 0 ) ? false : true;
+            }).catch(function (error) {
+                alert('Error: ', error);
+            });
+        };
 	};
 
 })();

@@ -21,6 +21,7 @@
 
         ctrl.$onInit = onInit;
         ctrl.onSelectedYear = onSelectedYear;
+        ctrl.onSelectedGenre = onSelectedGenre;
 
         /**
          * FUNCTIONS
@@ -40,6 +41,10 @@
 
         function onSelectedYear() {
             ctrl.onSearchByYear({searchParameter: ctrl.year})
+        }
+
+        function onSelectedGenre() {
+            ctrl.onSearchByGenre({searchParameter: ctrl.genre});
         }
 
     }

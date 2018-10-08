@@ -1,11 +1,15 @@
 * {
 	font-family: 'Open sans';
-    color: #687B82;
+	color: #687B82;
+	margin: 0px;
+	padding: 0px;
 }
 
 body { 
 	display: block;
-    margin: 0px;
+	margin: 0px;
+	width: 100%;
+	max-width: 100%;
 }
 
 .modal-section {
@@ -61,12 +65,21 @@ select:not([multiple]) {
 	margin-top: 100px;
 }
 
+._txt {
+	margin-top: 50px;
+}
+
+._txt h2 {
+	margin-left: 42px;
+}
+
 .movieThumbnail {
 	display: inline-block;
 	width: 455px;
 	height: 204px;
-	box-shadow: 0px 0px 4px 1px #929292;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
 	margin-bottom:20px;
 	margin-left: 20px;
 	overflow: auto;
 }
+

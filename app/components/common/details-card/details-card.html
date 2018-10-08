@@ -11,7 +11,7 @@
     <div  class="movieOverview">{{ $ctrl._details.extra }}-{{ $ctrl._details.overview.substring(0,100) }}...</div>
     <div class="trailFav">
         <div class="trailerDiv">
-            <button class="button" ng-click="$ctrl.watchTrailer()">Watch Trailer</button>
+            <button class="button" data-toggle="modal" data-target="#myModal" ng-click="$ctrl.watchTrailer($ctrl._details.id)">Watch Trailer</button>
         </div>
         <div class="favoriteDiv" ng-click="$ctrl.addToFavorites($ctrl._details)">
             Add to Favorites
@@ -19,3 +19,20 @@
         </div>
     </div>
 </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" ng-click="$ctrl.closeModal()">&times;</span>
+          <ng-youtube-embed 
+            width="100%"
+            video="$ctrl.videoKey" 
+            autoplay="true"
+            color="white"
+            end="20">
+        </ng-youtube-embed>
+        </div>
+      
+      </div>

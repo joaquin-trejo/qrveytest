@@ -3,7 +3,8 @@
     var detailsCard = {
         bindings: {
             details: '<',
-            favoritesHtml: '<'
+            favoritesHtml: '<',
+            current: '@'
         },
         controller: 'DetailsCardController',
         templateUrl: 'app/components/common/details-card/details-card.html'

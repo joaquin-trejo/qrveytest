@@ -21,6 +21,7 @@
 		"http-server": "^0.11.1",
 		"material": "^0.2.6",
 		"mdi": "^2.1.99",
+		"ng-youtube-embed": "^1.7.14",
 		"ui-select": "^0.19.8"
 	}
 }

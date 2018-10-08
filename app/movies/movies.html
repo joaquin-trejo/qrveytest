@@ -1,10 +1,23 @@
-<search-app on-search="$ctrl.searchByQuery(searchParameter)"></search-app>
-<filter-app genres="$ctrl.genres" on-search-by-year="$ctrl.searchByYear(searchParameter)"></filter-app>
+<search-app 
+    on-search="$ctrl.searchByQuery(searchParameter)">
+</search-app>
+<div class="_txt">
+    <h2>Descubre nuevas peliculas y programas de television</h2>
+</div>
+<filter-app id="filter"
+    genres="$ctrl.genres" 
+    on-search-by-year="$ctrl.searchByYear(searchParameter)" 
+    on-search-by-genre="$ctrl.searchByGenre(searchParameter)">
+</filter-app>
 <div class="movieGroup" ng-if="$ctrl.movies">
     <div ng-repeat="movie in $ctrl.movies track by $index" class='movieThumbnail'>
-        <details-card details='movie'></details-card>
+        <details-card 
+            details='movie'
+            current='movies'>
+        </details-card>
     </div>
     <div ng-if="$ctrl.showMessage" style="margin-left: 42px; margin-top: 100px;">
         Sorry, no movies were found related to these criterias.
     </div>
+    <pagination-app on-search-page="$ctrl.searchByPage(searchParameter)"></pagination-app>
 </div>
