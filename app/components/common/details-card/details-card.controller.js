@@ -43,6 +43,7 @@
         }
 
         function watchTrailer(_id) {
+            ctrl.youtubeEmbed = true;
             if (ctrl.currentState === 'movies') {
                 MoviesService.getTrailer(_id).then(function(response) {
                     ctrl.videoKey = "https://youtu.be/" + response.data.results[0].key;
@@ -67,8 +68,8 @@
           
         function closeModal() {
             // Get the modal
+            ctrl.youtubeEmbed = false;
             var modal = document.getElementById('myModal');
-            ctrl.videoKey = "";
             modal.style.display = "none";
         }
     }
