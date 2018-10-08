@@ -68,6 +68,7 @@
         function closeModal() {
             // Get the modal
             var modal = document.getElementById('myModal');
+            ctrl.videoKey = "";
             modal.style.display = "none";
         }
     }
